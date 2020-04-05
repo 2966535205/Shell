@@ -13,23 +13,9 @@
 
 ```gradle
 buildscript {
-
-    repositories {
-        //...
-        maven { url 'https://dl.bintray.com/milovetingting/maven' }
-        //...
-    }
     dependencies {
         //...
         classpath 'com.wangyz.plugins:ShellPlugin:1.0.0'
-        //...
-    }
-}
-
-allprojects {
-    repositories {
-        //...
-        maven { url 'https://dl.bintray.com/milovetingting/maven' }
         //...
     }
 }
