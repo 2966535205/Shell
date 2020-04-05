@@ -1,6 +1,6 @@
 # Shell
 
-[![License](https://camo.githubusercontent.com/a9d2657f1b6ae12ccbe153dce45bf3c4d6b82aa5/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4170616368652d2d322e302d627269676874677265656e2e737667)](https://www.apache.org/licenses/LICENSE-2.0)
+[![License](https://camo.githubusercontent.com/a9d2657f1b6ae12ccbe153dce45bf3c4d6b82aa5/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4170616368652d2d322e302d627269676874677265656e2e737667)](LICENSE)
 [![Download](https://api.bintray.com/packages/milovetingting/maven/ShellPlugin/images/download.svg) ](https://bintray.com/milovetingting/maven/ShellPlugin/_latestVersion)
 
 ## 简介
