@@ -1,0 +1,17 @@
+apply plugin: 'groovy'
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = 'milovetingting'
+    groupId = 'com.wangyz.plugins'
+    artifactId = 'ShellPlugin'
+    publishVersion = '1.0.0'
+    desc = 'a plugin to shell apk'
+    website = 'https://github.com/milovetingting/Shell'
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:3.1.4'
+}
