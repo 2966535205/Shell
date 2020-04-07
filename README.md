@@ -9,9 +9,22 @@
 
 ## 使用步骤
 
-0. 新建项目后，需要再新建一个Android Library类型的Module作为壳Module，名称随意，这里以"shell"为例,在壳Module中新建继承自Application的类，这里以"ShellApplication"为例,在ShellApplication中重写attachBaseContext方法,这个方法只要调用super.attachBaseContext(base)方法即可。然后，主Module需要依赖刚才新建的壳Module,并指定主Module的启动Application为刚才新建的ShellApplication。可以参考根目录下/sample/的示例工程。
+1. 新建项目，再新建一个Android Library类型的Module作为壳Module，名称随意，以"shell"为例,在壳Module中新建继承自Application的类，以"ShellApplication"为例,在ShellApplication中重写attachBaseContext方法,这个方法需要调用super.attachBaseContext(base)方法：
 
-1. 项目根目录下的build.gradle中引入插件:
+```java
+public class ShellApplication extends Application {
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+    }
+
+}
+```
+
+2. 主Module需要依赖刚才新建的壳Module,并指定主Module的启动Application为刚才新建的ShellApplication。
+
+3. 项目根目录下的build.gradle中引入插件:
 
 ```gradle
 buildscript {
@@ -23,7 +36,7 @@ buildscript {
 }
 ```
 
-2. app模块下的build.gradle引入插件及配置插件
+4. app模块下的build.gradle引入插件及配置插件
 
 ```gradle
 apply plugin: 'com.wangyz.plugins.ShellPlugin'
@@ -41,22 +54,9 @@ shellConfig {
 }
 ```
 
-3. 壳Module中增加继承自Application的自定义Application,如这里的ShellApplication,然后重写attachBaseContext方法
+5. sync工程
 
-```java
-public class ShellApplication extends Application {
-
-    @Override
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
-    }
-
-}
-```
-
-4. sync工程
-
-5. 在打包apk前，先执行Build-Clean Project,然后双击gradle面板的app/Tasks/build/assembleRelease，就会在项目根目录/壳Module名称-release/outputs/下生成signed.apk,这个apk就是加固过的apk.
+6. 在打包apk前，先执行Build-Clean Project,然后双击gradle面板的app/Tasks/build/assembleRelease，就会在项目根目录/壳Module名称-release/outputs/下生成signed.apk,这个apk就是加固过的apk.
 
 ## 注意事项
 
