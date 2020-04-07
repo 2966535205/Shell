@@ -5,9 +5,11 @@
 
 ## 简介
 
-基于dex加密实现的一个简单加固的插件。
+基于dex加密实现的一个简单加固的插件，只是简单加固的一种思路展现，请慎重用于生产环境，目前只支持Windows开发环境。
 
 ## 使用步骤
+
+0. 新建项目后，需要再新建一个Android Library类型的Module作为壳Module，名称随意，这里以"shell"为例,在壳Module中新建继承自Application的类，这里以"ShellApplication"为例,在ShellApplication中重写attachBaseContext方法,这个方法只要调用super.attachBaseContext(base)方法即可。然后，主Module需要依赖刚才新建的壳Module,并指定主Module的启动Application为刚才新建的ShellApplication。可以参考根目录下/sample/的示例工程。
 
 1. 项目根目录下的build.gradle中引入插件:
 
