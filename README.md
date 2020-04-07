@@ -7,6 +7,8 @@
 
 基于dex加密实现的一个简单加固的插件，只是简单加固的一种思路展现，请慎重用于生产环境，目前只支持Windows开发环境。
 
+具体实现思路可以参考源码以及：[Android应用加固的简单实现方案](http://www.milovetingting.cn/2020/04/01/Android/Android%E5%BA%94%E7%94%A8%E5%8A%A0%E5%9B%BA%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/)
+
 ## 使用步骤
 
 1. 新建项目，再新建一个Android Library类型的Module作为壳Module，名称随意，以"shell"为例,在壳Module中新建继承自Application的类，以"ShellApplication"为例,在ShellApplication中重写attachBaseContext方法,这个方法需要调用super.attachBaseContext(base)方法：
